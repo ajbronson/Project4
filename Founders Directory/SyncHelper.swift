@@ -32,6 +32,7 @@ class SyncHelper {
         static let photoSpouse = "spouse"
         static let resultKey = "result"
         static let sessionTokenKey = "sessionKey"
+        static let userIDKey = "userIDKey"
         static let successResult = "success"
     }
     

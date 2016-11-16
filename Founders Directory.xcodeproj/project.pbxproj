@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2123278B1DDC17A50016E06A /* ErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2123278A1DDC17A50016E06A /* ErrorHelper.swift */; };
+		21AD8BF11DDA0FFF00C4F0F9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AD8BF01DDA0FFF00C4F0F9 /* LoginViewController.swift */; };
 		3F2534011D937CF200530F0E /* FounderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2534001D937CF200530F0E /* FounderCell.swift */; };
 		3F3FEED21DC8D6C300436C69 /* SyncHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3FEED11DC8D6C300436C69 /* SyncHelper.swift */; };
 		3F6295C91DC8DEC600E365AC /* FounderDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6295C81DC8DEC600E365AC /* FounderDatabase.swift */; };
@@ -32,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		1D2AB372FB55CFA44EB1B015 /* Pods-Founders Directory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Founders Directory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Founders Directory/Pods-Founders Directory.debug.xcconfig"; sourceTree = "<group>"; };
+		2123278A1DDC17A50016E06A /* ErrorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHelper.swift; sourceTree = "<group>"; };
+		21AD8BF01DDA0FFF00C4F0F9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2AE0AE171EC9D7B454084317 /* Pods_Founders_Directory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Founders_Directory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2534001D937CF200530F0E /* FounderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FounderCell.swift; sourceTree = "<group>"; };
 		3F3FEED11DC8D6C300436C69 /* SyncHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncHelper.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 		3FF52E011D931AD800C665EE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				21AD8BF01DDA0FFF00C4F0F9 /* LoginViewController.swift */,
+				2123278A1DDC17A50016E06A /* ErrorHelper.swift */,
 				3FF52E0B1D93467200C665EE /* EditProfileViewController.swift */,
 				3FF52E051D931B2000C665EE /* FoundersViewController.swift */,
 				3FF52E091D932A4D00C665EE /* ProfileViewController.swift */,
@@ -297,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21AD8BF11DDA0FFF00C4F0F9 /* LoginViewController.swift in Sources */,
 				3FF52E061D931B2000C665EE /* FoundersViewController.swift in Sources */,
 				3FF52DF01D931AA700C665EE /* AppDelegate.swift in Sources */,
 				3F8999831DCB849200957C08 /* PhotoManager.swift in Sources */,
@@ -304,6 +311,7 @@
 				3FED10931D9C091900C84541 /* ProfileViewControllerDataSource.swift in Sources */,
 				3F6295C91DC8DEC600E365AC /* FounderDatabase.swift in Sources */,
 				3F3FEED21DC8D6C300436C69 /* SyncHelper.swift in Sources */,
+				2123278B1DDC17A50016E06A /* ErrorHelper.swift in Sources */,
 				3F6CED701DCEA18200ED6C1A /* AnalyticsHelper.swift in Sources */,
 				3FF52E0A1D932A4D00C665EE /* ProfileViewController.swift in Sources */,
 				3FF52E0C1D93467200C665EE /* EditProfileViewController.swift in Sources */,

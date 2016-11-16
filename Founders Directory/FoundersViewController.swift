@@ -32,6 +32,15 @@ class FoundersViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //TODO: Check to see if there is a session key
+//        UserDefaults.standard.set("",
+//                                  forKey: SyncHelper.Constants.sessionTokenKey)
+        if let _ = UserDefaults.standard.string(forKey: SyncHelper.Constants.sessionTokenKey) {
+            _ = SyncHelper.shared.synchronizeFounders()
+        } else {
+            performSegue(withIdentifier: "toLogin", sender: nil)
+        }
+
         foundersController = FetchedRecordsController(FounderDatabase.shared.dbQueue,
                                                       request: Request.foundersByName,
                                                       compareRecordsByPrimaryKey: true)
@@ -101,6 +110,8 @@ class FoundersViewController : UITableViewController {
                     if let photoImage = PhotoManager.shared.getPhotoFor(founderId: founder.id) {
                         DispatchQueue.main.async {
                             imageView.image = photoImage
+                            //TODO: THIS ISN'T WORKING
+                            //self.tableView.reloadRows(at: [indexPath], with: .automatic)
                         }
                     }
                 }

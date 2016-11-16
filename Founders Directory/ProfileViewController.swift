@@ -30,8 +30,8 @@ class ProfileViewController : UIViewController {
         static let MinImageOffset: CGFloat = 4
         static let MaxSubtitleHeight: CGFloat = 38
         static let MinSubtitleHeight: CGFloat = 0
-        // NEEDSWORK: calculate from profile text size; set high currently to test scrolling
-        static let ProfileCellHeight: CGFloat = 400
+        // TODO: calculate from profile text size; set high currently to test scrolling
+        static let ProfileCellHeight: CGFloat = 700
         static let SubtitleLineHeight: CGFloat = 19
     }
     
@@ -130,9 +130,9 @@ class ProfileViewController : UIViewController {
         textButton.disabled = !founder.isPhoneListed
         emailButton.disabled = !founder.isEmailListed
 
-        if founder.email != "chewie@gmail.com" {
+        if founder.id != UserDefaults.standard.integer(forKey: SyncHelper.Constants.userIDKey) {
             navigationItem.rightBarButtonItem = nil
-        }
+        } 
     }
 
     // MARK: - Actions
@@ -166,7 +166,7 @@ class ProfileViewController : UIViewController {
     }
 
     @IBAction func saveEdit(segue: UIStoryboardSegue) {
-        // NEEDSWORK: reload the edited Founder record
+        // TODO: reload the edited Founder record
     }
 }
 
