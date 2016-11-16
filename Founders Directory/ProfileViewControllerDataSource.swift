@@ -18,6 +18,9 @@ extension ProfileViewController : UITableViewDataSource {
             if let infoCell = cell as? InfoCell {
                 infoCell.emailLabel.text = founder.isEmailListed ? founder.email : ""
                 infoCell.phoneLabel.text = founder.isPhoneListed ? founder.cell : ""
+                infoCell.jobTitleLabel.text = founder.jobTitle.characters.count > 0 ? founder.jobTitle : "N/A"
+                infoCell.address1Label.text = founder.homeAddress1.characters.count > 0 ? "\(founder.homeAddress1) \(founder.homeAddress2)" : "N/A"
+                infoCell.address2Label.text = (founder.homeCity.characters.count > 0 && founder.homeState.characters.count > 0) ? "\(founder.homeCity), \(founder.homeState) \(founder.homeZip)" : ""
                 
                 if founder.spousePreferredFullName == "" {
                     infoCell.spouseNameIndicatorLabel.isHidden = true

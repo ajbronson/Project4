@@ -302,7 +302,10 @@ Millennial Enterprises</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="address1Label" destination="JyP-IG-IjU" id="2oA-eA-yBh"/>
+                                            <outlet property="address2Label" destination="kAf-Bf-1oD" id="vA8-2n-exh"/>
                                             <outlet property="emailLabel" destination="R2G-eF-YJa" id="vnF-HD-K8d"/>
+                                            <outlet property="jobTitleLabel" destination="Qhr-lc-jDR" id="Ieg-kg-bY0"/>
                                             <outlet property="phoneLabel" destination="f1k-oG-a9h" id="nde-pS-hMe"/>
                                             <outlet property="spouseNameIndicatorLabel" destination="zx3-gZ-qID" id="E5o-LK-r0d"/>
                                             <outlet property="spouseNameLabel" destination="dU7-Jj-9Hw" id="86f-QA-DRG"/>

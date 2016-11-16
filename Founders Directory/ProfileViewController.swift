@@ -19,7 +19,7 @@ class ProfileViewController : UIViewController {
     }
 
     struct Size {
-        static let InfoCellHeight: CGFloat = 200
+        static let InfoCellHeight: CGFloat = 220
         static let MaxFontSize: CGFloat = 15
         static let MinFontSize: CGFloat = 28
         static let MaxHeaderHeight: CGFloat = 280

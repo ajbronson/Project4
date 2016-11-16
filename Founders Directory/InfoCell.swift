@@ -13,4 +13,8 @@ class InfoCell : UITableViewCell {
     @IBOutlet var phoneLabel: UILabel!
     @IBOutlet var spouseNameIndicatorLabel: UILabel!
     @IBOutlet var spouseNameLabel: UILabel!
+    @IBOutlet weak var jobTitleLabel: UILabel!
+    @IBOutlet weak var address1Label: UILabel!
+    @IBOutlet weak var address2Label: UILabel!
+    
 }
