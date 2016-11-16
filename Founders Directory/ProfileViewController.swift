@@ -19,7 +19,7 @@ class ProfileViewController : UIViewController {
     }
 
     struct Size {
-        static let InfoCellHeight: CGFloat = 114
+        static let InfoCellHeight: CGFloat = 200
         static let MaxFontSize: CGFloat = 15
         static let MinFontSize: CGFloat = 28
         static let MaxHeaderHeight: CGFloat = 280
@@ -31,7 +31,7 @@ class ProfileViewController : UIViewController {
         static let MaxSubtitleHeight: CGFloat = 38
         static let MinSubtitleHeight: CGFloat = 0
         // TODO: calculate from profile text size; set high currently to test scrolling
-        static let ProfileCellHeight: CGFloat = 700
+        static let ProfileCellHeight: CGFloat = 400
         static let SubtitleLineHeight: CGFloat = 19
     }
     
