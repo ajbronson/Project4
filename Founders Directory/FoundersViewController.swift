@@ -95,7 +95,9 @@ class FoundersViewController : UITableViewController {
     
     func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
         let founder = foundersController.record(at: indexPath)
-
+        if founder.id == 7 {
+            print("hi!")
+        }
         if let founderCell = cell as? FounderCell {
             founderCell.founderNameLabel?.text = founder.preferredFullName
             founderCell.founderCompanyLabel?.text = founder.organizationName

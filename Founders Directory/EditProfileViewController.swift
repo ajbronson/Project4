@@ -8,12 +8,13 @@
 
 import UIKit
 
-class EditProfileViewController : UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditProfileViewController : UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
     
     // MARK: - Constants
     
-    private struct Storyboard {
+    private struct UserMessages {
         static let TakePhotoLabel = "Take Photo"
+        static let ProfileDefaultMessage = "(Enter Profile Information Here)"
     }
 
     // MARK: - Outlets
@@ -27,6 +28,10 @@ class EditProfileViewController : UITableViewController, UIImagePickerController
     @IBOutlet weak var emailPrivateSwitch: UISwitch!
     @IBOutlet weak var phonePrivateSwitch: UISwitch!
     @IBOutlet weak var profileText: UITextView!
+    @IBOutlet weak var addressText: UITextField!
+    @IBOutlet weak var cityText: UITextField!
+    @IBOutlet weak var stateText: UITextField!
+    @IBOutlet weak var zipText: UITextField!
     
     // MARK: - Properties
     
@@ -39,6 +44,8 @@ class EditProfileViewController : UITableViewController, UIImagePickerController
 
         updateUI()
         navigationController?.resetBarTransparency()
+        
+        setupProfileText()
     }
 
     override func viewDidLayoutSubviews() {
@@ -49,6 +56,17 @@ class EditProfileViewController : UITableViewController, UIImagePickerController
 
     // MARK: - Helpers
     
+    private func setupProfileText() {
+        if profileText.text.characters.count == 0 {
+            profileText.text = UserMessages.ProfileDefaultMessage
+        }
+        
+        
+        profileText.layer.borderColor = UIColor.black.cgColor
+        profileText.layer.borderWidth = 1.0
+        profileText.delegate = self
+    }
+    
     @objc
     private func updateUI() {
         if let founder = self.founder {
@@ -57,6 +75,10 @@ class EditProfileViewController : UITableViewController, UIImagePickerController
             companyText.text = founder.organizationName
             emailText.text = founder.email
             phoneText.text = founder.cell
+            addressText.text = "\(founder.homeAddress1) \(founder.homeAddress2)"
+            stateText.text = founder.homeState
+            cityText.text = founder.homeCity
+            zipText.text = founder.homeZip
             spouseText.text = founder.spousePreferredFullName
             emailPrivateSwitch.isOn = !founder.isEmailListed
             phonePrivateSwitch.isOn = !founder.isPhoneListed
@@ -81,7 +103,7 @@ class EditProfileViewController : UITableViewController, UIImagePickerController
         let imagePicker = UIImagePickerController()
         var sourceType: UIImagePickerControllerSourceType = .photoLibrary
 
-        if sender.titleLabel?.text == Storyboard.TakePhotoLabel {
+        if sender.titleLabel?.text == UserMessages.TakePhotoLabel {
             sourceType = .camera
         }
 
@@ -91,6 +113,10 @@ class EditProfileViewController : UITableViewController, UIImagePickerController
             imagePicker.allowsEditing = true
             present(imagePicker, animated: true)
         }
+    }
+    
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
+        //TOOD: impement save
     }
     
     // MARK: - Image picker controller delegate
@@ -103,5 +129,21 @@ class EditProfileViewController : UITableViewController, UIImagePickerController
         }
         
         dismiss(animated: true)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView == profileText {
+            if profileText.text == UserMessages.ProfileDefaultMessage {
+                profileText.text = ""
+            }
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView == profileText {
+            if profileText.text.characters.count == 0 {
+                profileText.text = UserMessages.ProfileDefaultMessage
+            }
+        }
     }
 }
